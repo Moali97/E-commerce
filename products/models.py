@@ -5,7 +5,7 @@ LABEL = (
     ('New', 'New'),
     ('Used', 'Used')
 )
-
+#
 
 # This contains the information about each product
 class Items(models.Model):
