@@ -28,3 +28,4 @@ class OrderItem(models.Model) :
 
     def __str__(self):
         return f"{self.quantity} of {self.item.item_name}"
+
