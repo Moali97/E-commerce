@@ -1,3 +1,4 @@
+{% load static %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -7,15 +8,33 @@
 
     <!-- List of items   -->
 {% for item in items %}
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">
-            {{ item.item_name }} ({{ item.label }})<br/>
-            £{{ item.price }}<br/>
-             {{ item.description }}
-             <hr/>
-        </p>
-      </div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ item.item_name }} ({{ item.label }})</h5>
+    <p class="card-text">£{{ item.price }}<br>
+                          {{ item.description }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+         <!-- Card
+ <div id="items">
+ <div class="row col-12">
+  <div class="card col-6">
+    <img class="card-img-top" src="" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.item_name }} ({{ item.label }}) </h5>
+      <p class="card-text">£{{ item.price }}<br>
+                            {{ item.description }}</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
     </div>
+  </div>
+ </div>
+ </div>-->
+
+
+<link href="{% static 'css/main.css' %}" rel="stylesheet">
+
 {% endfor %}
