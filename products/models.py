@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.shortcuts import reverse
 
 LABEL = (
     ('New', 'New'),
@@ -13,12 +14,18 @@ class Items(models.Model):
     price = models.FloatField()
     label = models.CharField(choices=LABEL, max_length=4, default='')
     description = models.TextField()
+    slug = models.SlugField( default='')
 
     class Meta:
         verbose_name_plural = "Items"
 
     def __str__(self):
         return self.item_name
+
+    def get_absolute_url(self):
+        return reverse("products:product", kwargs={
+            "slug" : self.slug
+        })
 
 
 # maybe add get_add and get_remove
