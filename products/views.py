@@ -2,11 +2,16 @@ from django.shortcuts import render
 from .models import Items
 
 
-def list_view(request):
-    context = {
-        'items':Items.objects.all()
-    }
+def store(request):
+    context = {}
+    return render(request, 'store.html', context)
 
-#    context["dataset"]= Items.objects.all()
 
-    return render(request, 'base.html', context)
+def cart(request):
+    context = {}
+    return render(request, 'cart.html', context)
+
+
+def checkout(request):
+    context = {}
+    return render(request, 'checkout.html', context)
