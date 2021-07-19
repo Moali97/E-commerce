@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Items
+from .models import Item
 
 
 def store(request):
