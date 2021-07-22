@@ -26,8 +26,7 @@ class Item(models.Model):
     label = models.CharField(choices=LABEL, max_length=4, default='')
     description = models.TextField()
     slug = models.SlugField(max_length=25, default='')
-
-    #   image
+    image = models.ImageField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Items"
