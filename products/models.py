@@ -34,6 +34,14 @@ class Item(models.Model):
     def __str__(self):
         return self.item_name
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
@@ -59,7 +67,7 @@ class OrderItem(models.Model):
         verbose_name_plural = "OrderItem"
 
     def __str__(self):
-        return self.item
+        return str(self.item)
 
 
 class ShippingAddress(models.Model):
