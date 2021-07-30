@@ -13,7 +13,6 @@
 					<div class="form-field">
 						<input required class="form-control" type="email" name="email" placeholder="Email..">
 					</div>
-
             </div>
 
             <div id="shipping-info">
@@ -36,21 +35,34 @@
 							<input class="form-control" type="text" name="country" placeholder="Zip code..">
 						</div>
 					</div>
-            </div>
 
-            <hr>
-            <input id="form-button" class="btn btn-success btn-block"  type="submit" value="Continue">
-            </form>
-          </div>
-    </div>
+					<hr>
+					<input id="form-button" class="btn btn-success btn-block"  type="submit" value="Continue">
+
+				</form>
+		</div>
 
     <div class="col-lg-6">
         <div class="box-element">
+			<a class="btn btn-outline-dark" href="{% url 'cart' %}">Go back to Cart</a>
+			<hr>
+			<h3>Order Summary</h3>
+			<hr>
+			{% for order in orders %}
+			<div class="cart-row">
+                <div style="flex:2"><img class="row-image" scr="{{order.item.imageURL}}"></div>
+                <div style="flex:2">{{order.item.item_name}}</div>
+                <div style="flex:1">£{{order.item.price|floatformat:2}}</div>
+				<div style="flex:1">{{order.quantity}}</div>
+			</div>
+			{% endfor %}
 
-        </div>
-    </div>
- </div>
-
+			<h5>Items: {{order.cart_total_items}}</h5>
+			<h5>Total: £{{order.cart_total|floatformat:2}}</h5>
+		  </div>
+	    </div>
+	  </div>
+	</div>
 
 
 
