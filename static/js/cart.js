@@ -7,5 +7,10 @@
             console.log('itemID:', itemID, 'action:', action )
 
             console.log('USER:', user)
+            if(user === 'AnonymousUser'){
+                console.log('you are not logged in')
+            }else{
+                console.log('user is logged in, sending rquested data')
+            }
         })
     }
