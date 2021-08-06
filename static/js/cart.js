@@ -6,6 +6,6 @@
             var action = this.dataset.action
             console.log('itemID:', itemID, 'action:', action )
 
-
+            console.log('USER:', user)
         })
     }
