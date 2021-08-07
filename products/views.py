@@ -38,3 +38,7 @@ def checkout(request):
                'order': order
                }
     return render(request, 'checkout.html', context)
+
+
+def updateItem(request):
+    return JsonResponse('Item added to your cart', safe=False)
