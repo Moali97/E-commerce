@@ -42,4 +42,10 @@ def checkout(request):
 
 
 def updateItem(request):
+    data = json.loads(request.data)
+    itemId = data['itemId']
+    action = data['action']
+
+    print('Action:', action)
+    print('itemId:', itemId)
     return JsonResponse('Item added to your cart', safe=False)
