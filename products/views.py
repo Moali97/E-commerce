@@ -3,9 +3,10 @@ from .models import *
 from django.http import JsonResponse
 import json
 
+
 def store(request):
     items = Item.objects.all()
-    context = {'items':items}
+    context = {'items': items}
 
     return render(request, 'store.html', context)
 
@@ -17,10 +18,10 @@ def cart(request):
         orders = order.orderitem_set.all()
     else:
         orders = []
-        order = {'cart_total':0, 'cart_total_items':0}
+        order = {'cart_total': 0, 'cart_total_items': 0}
 
-    context = {'orders':orders,
-               'order':order
+    context = {'orders': orders,
+               'order': order
                }
 
     return render(request, 'cart.html', context)
