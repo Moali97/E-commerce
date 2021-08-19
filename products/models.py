@@ -9,8 +9,6 @@ LABEL = (
 )
 
 
-# This contains the information about each product
-
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=150, null=True)
